@@ -20,7 +20,6 @@ def handle_client(client_socket, client_address):
         if not data:
             break
         message = data.decode()
-        print(f"Received from {client_address}: {message}")
         if message.lower() == 'exit':
             print(f"Client {client_address} disconnected")
             client_num -= 1
@@ -28,6 +27,7 @@ def handle_client(client_socket, client_address):
                 server_running = False
             break
         else:
+            print(f"Received from {client_address}: {message}")
             client_socket.send(data) 
     client_socket.close()
     
