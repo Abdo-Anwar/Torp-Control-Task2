@@ -59,7 +59,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"Bad Request: No file uploaded.")
 
 
-def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
+def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=12345):
     server_address = ('', port) # '' The empty string means the server will listen on all available IP addresses
     httpd = server_class(server_address, handler_class)
     print(f'Starting server on port {port}...')
